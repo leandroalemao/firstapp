@@ -1,14 +1,41 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Firstapp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>FirstApp</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
 
-<%= yield %>
+<body ng-app="FirstApp">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <ul class="nav nav-pills">
+            <li class="active"><a href='/'>MetaCasts.tv</a></li>
+            <li><a href='/users'>Users</a></li>
+            <li><a href='/about'>About</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+          <input type='text' ng-model="foo">
+          {{foo}}
+          <%= yield %>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; MetaCasts.tv 2014</p>
+      </footer>
+
+    </div>
+  </script>
 
 </body>
 </html>
