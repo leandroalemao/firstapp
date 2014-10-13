@@ -1,11 +1,10 @@
-<div class='span3'>
+<div class='span3' ng-controller="CountriesController">
     <div class='well sidebar-nav'>
         <ul class='nav nav-list'>
             <li class='nav-header'>Countries</li>
-            <li>countries go here.</li>
-            <li>countries go here.</li>
-            <li>countries go here.</li>
-            <li>countries go here.</li>
+            <li ng-repeat="country in countries">
+                {{country.title}}
+            </li>
         </ul>
     </div>
 </div>
